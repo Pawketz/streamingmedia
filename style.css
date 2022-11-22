@@ -4,6 +4,9 @@ ul {
     max-height: 0;
     transition: max-height .2s ease-out;
 }
+li{
+    list-style: none;
+}
 label {
     cursor: pointer;
     display: inline-block;
@@ -166,8 +169,8 @@ footer{
     font-weight: 700;
     font-style: normal;
     font-size: 10pt;
-    color: #590242; 
-    background: #ffffff;   
+    color: #590242;
+    text-align: center;
 }
 
 .more{
@@ -225,7 +228,7 @@ audio::-webkit-media-controls-enclosure {
     border-radius: 5px;
 }
 #playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
-background: #ffffff;
+    background: #ffffff;
 }
 html{
     background-color: #020659;
@@ -233,26 +236,57 @@ html{
 body{
     margin:  0 auto;
     font-family: raleway;
-    color: #ffffff;
-}
-
-section[id="playlists"],section[id="curated"]{
-    background-color: #ffffff;
 }
 nav  a:hover{
     background-color: #590242;
 }
 
+
 section[id="playlists"] div[class="scroll"]{
-    display: grid;
-    background-color: #2699FB;
-    grid-template-columns: 1fr;
+    background-color:#0D8DFB;
 }
-section[id="playlists"] div[class="scroll"]~section{
-    background-color: #0d8dfb;
+
+section[id="curated"] div[class="scroll"]{
+    background-color: #030A8C;
 }
+
+#playlists~img, #curated~img{
+    border-radius: 15px;
+}
+
 .smooth{
    
+}
+
+.bgblock{
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #020659;}
+
+@media screen and (min-width: 375px){
+
+    #wrapper{
+        width: 375px;
+        background-color: #ffffff;
+        margin: 0 auto;
+    }
+
+    section[id="playlists"] div[class="scroll"]{
+        display: flex;
+        flex-direction: column;
+    }  
+    
+    section[id="curated"] div[class="scroll"]{
+        display: flex;
+        flex-direction: column;
+    } 
+    
+    .miniGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }    
+
 }
 
 @media screen and (min-width:834px) {
@@ -266,5 +300,31 @@ section[id="playlists"] div[class="scroll"]~section{
     label span, input {
         display: none;
     }
+
+    #wrapper{
+        width: 834px;
+        background-color: #ffffff;
+        margin: 0 auto;
+    }
+
+    section[id="playlists"] div[class="scroll"]{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    section[id="curated"] div[class="scroll"]{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    .miniGrid{
+        display: grid;
+        grid-template:
+            "a b" 75px
+            "a c" 75px / 1fr 1fr;
+    }     
+
 }
 
